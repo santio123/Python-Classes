@@ -11,4 +11,4 @@ elif units <=200:
 else:
     amt = units * 8.45 + 75
 
-print("The electricity bill is",amt)
+print("The electricity bill is Rs.",amt)
