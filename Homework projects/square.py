@@ -9,11 +9,11 @@ t = turtle.Turtle()
 t.color('orange')
 t.width(10)
 t.fillcolor('green')
-n = 6
-a = 360/6
+n = 4
+a = 360/4
 t.begin_fill()
-for i in range(6):
-    t.forward(150)
+for i in range(4):
+    t.forward(180)
     t.right(a)
 t.end_fill()
 
