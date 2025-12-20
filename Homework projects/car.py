@@ -1,4 +1,4 @@
-# polymorphism
+# vehicle polymorphism
 
 class BMW:
     def name(self):
