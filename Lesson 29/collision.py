@@ -11,6 +11,7 @@ class Sprite(pygame.sprite.Sprite):
     def __init__(self,color,h,w):
         super().__init__()
         self.image = pygame.Surface([w,h])
+        self.image.fill(color)
         self.rect = self.image.get_rect()
     def move(self,xchange,ychange):
         self.rect.x = max(min(self.rect.x +xchange,SWIDTH -self.rect.w),0)
@@ -18,12 +19,12 @@ class Sprite(pygame.sprite.Sprite):
 clock =pygame.time.Clock()
 
 all_sprites = pygame.sprite.Group()
-sprite1 = Sprite("green",20,20)
+sprite1 = Sprite("aqua",20,20)
 sprite1.rect.x = 200
 sprite1.rect.y = 200
 all_sprites.add(sprite1)
 
-sprite2 = Sprite("green",20,20)
+sprite2 = Sprite("red",20,20)
 sprite2.rect.x = 100
 sprite2.rect.y = 50
 all_sprites.add(sprite2)
@@ -39,8 +40,8 @@ while True:
     ychange = (keys[pygame.K_DOWN]- keys[pygame.K_UP]) *mspeed
     if sprite1.rect.colliderect(sprite2.rect):
 
-        win_text = font.render("You Win!!", True, pygame.color('yellow'))
-        screen.blitz(win_text, (200,200))
+        win_text = font.render("You Win!!", True, 'yellow')
+        screen.blit(win_text, (200,200))
         all_sprites.remove(sprite2)
 
     sprite1.move(xchange,ychange)
