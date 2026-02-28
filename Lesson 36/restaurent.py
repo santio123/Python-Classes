@@ -114,10 +114,25 @@ def total():
     entrytotal.insert(0,str('Rs %.2f'% totalcost))
     rand = random.randint(1,1000)
     entryorderno.insert(0,str(rand))
-
+def price():
+    top = Toplevel()
+    top.geometry("300x200")
+    top.title("toplevel")
+    l2 = Label(top, text = "Price",font = ('Times',22,'bold'))
+    l3 = Label(top, text = "Drinks Rs. 20",font = ('Times',12,'bold'))
+    l4 = Label(top, text = "Pizza Rs. 250",font = ('Times',12,'bold'))
+    l5 = Label(top, text = "Burger Rs. 150",font = ('Times',12,'bold'))
+    l6 = Label(top, text = "Largeburger Rs. 200",font = ('Times',12,'bold'))
+    l7 = Label(top, text = "Fries Rs. 75",font = ('Times',12,'bold'))
+    l2.pack()
+    l3.pack()
+    l4.pack()
+    l5.pack()
+    l6.pack()
+    l7.pack()
     
 
-button1 = Button(frame1,font =("arial",12,'bold'),text = "Price",bg = 'white',fg = 'black')
+button1 = Button(frame1,font =("arial",12,'bold'),text = "Price",bg = 'white',fg = 'black',command = price)
 button1.grid(row=10,column =0,padx=10,pady=10)
 
 button2 = Button(frame1,font =("arial",12,'bold'),text = "Total Price",bg = 'white',fg = 'black',command = total)
